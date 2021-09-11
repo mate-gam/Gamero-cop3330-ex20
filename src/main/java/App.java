@@ -14,6 +14,7 @@ public class App
         System.out.print("What state do you live in? ");
         String state = sc.nextLine();
         double tax = 0, total = 0, realTax = 0;
+        String realTotal1 = "The total is $" + order;
         if (state.equals("Wisconsin"))
         {
             tax = 0.05;
@@ -29,15 +30,17 @@ public class App
             }
             realTax = order * tax;
             total = order * (1 + tax);
+            float realTotal = (float)Math.round(total * 100) / 100;
+            realTotal1 = String.format("The subtotal is $%.2f \nThe tax is $%.2f \nThe total is $%.2f", order, realTax, realTotal);
         }
         if (state.equals("Illinois"))
         {
             tax = .008;
             realTax = order * tax;
             total = order * (1 + tax);
+            float realTotal = (float)Math.round(total * 100) / 100;
+            realTotal1 = String.format("The subtotal is $%.2f \nThe tax is $%.2f \nThe total is $%.2f", order, realTax, realTotal);
         }
-        float realTotal = (float)Math.round(total * 100) / 100;
-        String realTotal1 = String.format("The subtotal is %.2f \nThe tax is %.2f \nThe total is %.2f", order, realTax, realTotal);
         System.out.println(realTotal1);
     }
 }
