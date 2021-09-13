@@ -18,7 +18,7 @@ public class App
         if (state.equals("Wisconsin"))
         {
             tax = 0.05;
-            System.out.print("What country do you live in? ");
+            System.out.print("What county do you live in? ");
             String county = sc.nextLine();
             if (county.equals("Eau Claire"))
             {
